@@ -125,7 +125,7 @@ export default function Home() {
 
    <div
   id="simulacion-descarga"
-  className="w-fit h-auto p-6 fixed overflow-hidden border-none"
+  className="w-fit h-fit p-6 fixed overflow-hidden border-none"
   style={{
     top: "-9999px", // fuera del viewport
     left: "-9999px",
