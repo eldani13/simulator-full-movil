@@ -9,6 +9,8 @@ import { RiDownloadCloudFill } from "react-icons/ri";
 import { MdReportProblem } from "react-icons/md";
 import domtoimage from "dom-to-image-more";
 
+const logo = '/logo.png'
+
 export default function Home() {
   const [selectedModel, setSelectedModel] = useState(models[0].name);
   const [showResult, setShowResult] = useState(false);
@@ -33,7 +35,6 @@ export default function Home() {
       console.error("Error generando imagen:", err);
     }
   }
-
 
   const resetResult = () => {
     setShowResult(false); // <- para que vuelva a aparecer el botón
@@ -76,24 +77,27 @@ export default function Home() {
 
           {/* Botones */}
           <div className="flex flex-col md:flex-row justify-end items-center gap-4 px-4 mb-10">
-            <button
-              onClick={handleDownload}
-              className="w-full md:w-auto bg-[#0142d0] hover:bg-[#003eaa] text-white font-semibold py-2 px-4 rounded-xl shadow-md flex justify-center items-center gap-2"
-            >
-              <RiDownloadCloudFill size={24} />
-              Descargar simulación
-            </button>
-
-            <a
-              href="https://wa.me/573015222004?text=Hola,%20presento%20inconvenientes%20con%20el%20simulador%20de%20crédito.%20¿Podrían%20ayudarme?"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="w-full md:w-auto bg-[#0142d0] hover:bg-[#003eaa] text-white font-semibold py-2 px-4 rounded-xl shadow-md flex justify-center items-center gap-2">
-                <MdReportProblem size={24} />
-                ¿Algún problema?
+            <div>
+              <button
+                onClick={handleDownload}
+                className="w-full md:w-auto bg-[#0142d0] hover:bg-[#003eaa] text-white font-semibold py-2 px-4 rounded-xl shadow-md flex justify-center items-center gap-2"
+              >
+                <RiDownloadCloudFill size={24} />
+                Descargar simulación
               </button>
-            </a>
+            </div>
+            <div>
+              <a
+                href="https://wa.me/573015222004?text=Hola,%20presento%20inconvenientes%20con%20el%20simulador%20de%20crédito.%20¿Podrían%20ayudarme?"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="w-full md:w-auto bg-[#0142d0] hover:bg-[#003eaa] text-white font-semibold py-2 px-4 rounded-xl shadow-md flex justify-center items-center gap-2">
+                  <MdReportProblem size={24} />
+                  ¿Algún problema?
+                </button>
+              </a>
+            </div>
           </div>
 
           {/* Grid principal */}
@@ -146,8 +150,8 @@ export default function Home() {
           ></div>
 
           <div className="relative z-10 text-center">
-            <Image
-              src="logo.png"
+            <img
+              src={logo}
               alt="Logo"
               width={100}
               height={100}
