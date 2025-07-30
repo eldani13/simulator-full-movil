@@ -60,11 +60,11 @@ export default function Home() {
               </h1>
               <div>
                 <Image
-                  src="images/logo.png"
+                  src="/images/logo.png"
                   alt="Logo Full Móvil"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto drop-shadow-md"
+                  width={250}
+                  height={250}
+                  // className="w-full h-auto drop-shadow-md"
                 />
               </div>
             </div>
