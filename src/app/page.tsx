@@ -34,13 +34,6 @@ export default function Home() {
     }
   }
 
-  // const handleClick = () => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //     setShowResult(true);
-  //   }, 1000);
-  // };
 
   const resetResult = () => {
     setShowResult(false); // <- para que vuelva a aparecer el botón
@@ -67,7 +60,7 @@ export default function Home() {
               </h1>
               <div>
                 <Image
-                  src="/images/logo.png"
+                  src="images/logo.png"
                   alt="Logo Full Móvil"
                   width={200}
                   height={200}
