@@ -32,12 +32,6 @@ export default function SimulatorForm({
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // const handleCalculate = () => {
-  //   setLoading(true);
-  //   setShowResult(false);
-  //   setProgress(0);
-  // };
-
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (loading && progress < 100) {
@@ -61,12 +55,11 @@ export default function SimulatorForm({
   const filteredModels = models.filter((m) =>
     m.name.toLowerCase().includes(search.toLowerCase())
   );
-  // const storageOptions = Object.keys(modelData.storage);
 
   const handleStorageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setStorage(e.target.value);
     resetResult();
-    setChangeCounter((prev) => prev + 1); // <- Esto faltaba
+    setChangeCounter((prev) => prev + 1);
   };
 
   const handleFaultChange = (fault: string) => {
@@ -83,7 +76,7 @@ export default function SimulatorForm({
     setSelectedModel(e.target.value);
     setFaults([]);
     resetResult();
-    setChangeCounter((c) => c + 1); // <- Esto faltaba
+    setChangeCounter((c) => c + 1);
   };
 
   useEffect(() => {
@@ -119,7 +112,6 @@ export default function SimulatorForm({
         />
       </div>
 
-      {/* Modelo */}
       <div>
         <label className="block text-sm font-medium mb-1 text-black">
           Modelo
@@ -137,7 +129,6 @@ export default function SimulatorForm({
         </select>
       </div>
 
-      {/* Almacenamiento */}
       <div>
         <label className="block text-sm font-medium mb-1 text-black">
           Almacenamiento
@@ -154,8 +145,6 @@ export default function SimulatorForm({
           ))}
         </select>
       </div>
-
-      {/* Fallas */}
 
       <div>
         <label className="block text-sm font-medium mb-2 text-black">
@@ -176,10 +165,8 @@ export default function SimulatorForm({
                     className="peer absolute w-full h-full opacity-0 z-10 cursor-pointer"
                   />
 
-                  {/* Border circle always visible */}
                   <span className="absolute w-full h-full rounded-full border border-[#fb7e02]"></span>
 
-                  {/* Icon appears only if checked */}
                   <IoIosCheckmarkCircle
                     size={24}
                     className="text-[#fb7e02] opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none"
@@ -188,14 +175,10 @@ export default function SimulatorForm({
 
                 <span className="text-[#0142d0] font-medium">{fault}</span>
               </div>
-
-              {/* <span className="text-[#fb7e02] font-semibold">(-${value})</span> */}
             </label>
           ))}
         </div>
       </div>
-
-      {/* Resultado */}
 
       <QuoteBox price={finalPrice} changeTrigger={changeCounter} />
     </div>

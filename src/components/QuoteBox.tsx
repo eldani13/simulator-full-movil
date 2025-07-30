@@ -21,7 +21,6 @@ export default function QuoteBox({
     setProgress(0);
   };
 
-  // Este useEffect reinicia cuando cambia el modelo o el almacenamiento
   useEffect(() => {
     setShowResult(false);
     setLoading(false);
@@ -46,14 +45,13 @@ export default function QuoteBox({
       <h3 className="text-xl font-semibold text-[#0142d0]">Valor estimado</h3>
 
       {!showResult && !loading && (
-<button
-  onClick={handleClick}
-  className="flex justify-center items-center mt-4 mb-8 px-6 py-3 bg-[#fb7e02] text-white font-bold rounded-xl border border-[#fb7e02] hover:bg-[#fb7e02] transition shadow-lg mx-auto"
->
-  <TfiMoney size={20} className="mr-2 text-white" />
-  Calcular valor
-</button>
-
+        <button
+          onClick={handleClick}
+          className="flex justify-center items-center mt-4 mb-8 px-6 py-3 bg-[#fb7e02] text-white font-bold rounded-xl border border-[#fb7e02] hover:bg-[#fb7e02] transition shadow-lg mx-auto"
+        >
+          <TfiMoney size={20} className="mr-2 text-white" />
+          Calcular valor
+        </button>
       )}
 
       {loading && (

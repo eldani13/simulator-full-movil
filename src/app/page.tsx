@@ -23,7 +23,6 @@ export default function Home() {
     const node = document.getElementById("simulacion-descarga");
     if (!node) return;
 
-    // No necesitas mostrarlo
     try {
       const dataUrl = await domtoimage.toPng(node);
 
@@ -37,7 +36,7 @@ export default function Home() {
   }
 
   const resetResult = () => {
-    setShowResult(false); // <- para que vuelva a aparecer el botón
+    setShowResult(false);
   };
 
   const modelData = models.find((m) => m.name === selectedModel)!;
@@ -50,10 +49,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Contenido principal */}
       <main className="flex-1 text-gray-900">
         <section className="max-w-7xl mx-auto px-4 py-16">
-          {/* Título con logo */}
           <div className="text-center mb-16">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0142d0]">
@@ -75,7 +72,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Botones */}
           <div className="flex flex-col md:flex-row justify-end items-center gap-4 px-4 mb-10">
             <div className="w-full md:w-[220px]">
               <button
@@ -100,7 +96,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Grid principal */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch h-full">
             <div className="flex flex-col h-full">
               <div className="flex-1 backdrop-blur-lg bg-transparent border border-transparent rounded-3xl p-8 shadow-xl flex flex-col justify-between">
@@ -123,68 +118,69 @@ export default function Home() {
           </div>
         </section>
 
-   <div
-  id="simulacion-descarga"
-  className="w-fit h-fit p-6 fixed overflow-hidden border-none"
-  style={{
-    top: "-9999px", // fuera del viewport
-    left: "-9999px",
-    backgroundColor: "#ffffff",
-    border: "none",
-    boxShadow: "none",
-    outline: "none",
-  }}
->
-  <div
-    className="absolute top-0 left-0 w-full h-full rounded-xl border-none"
-    style={{
-      backgroundImage: `url('/images/fondo.jpg')`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      opacity: 0.2,
-      border: "none",
-      boxShadow: "none",
-      outline: "none",
-    }}
-  ></div>
+        <div
+          id="simulacion-descarga"
+          className="w-fit h-fit p-6 fixed overflow-hidden border-none"
+          style={{
+            top: "-9999px",
+            left: "-9999px",
+            backgroundColor: "#ffffff",
+            border: "none",
+            boxShadow: "none",
+            outline: "none",
+          }}
+        >
+          <div
+            className="absolute top-0 left-0 w-full h-full rounded-xl border-none"
+            style={{
+              backgroundImage: `url('/images/fondo.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              opacity: 0.2,
+              border: "none",
+              boxShadow: "none",
+              outline: "none",
+            }}
+          ></div>
 
-  <div className="relative z-10 text-center">
-    <img
-      src={logo}
-      alt="Logo"
-      width={100}
-      height={100}
-      style={{
-        margin: "0 auto",
-        marginBottom: "1rem",
-        border: "none",
-        boxShadow: "none",
-        outline: "none",
-      }}
-    />
+          <div className="relative z-10 text-center">
+            <img
+              src={logo}
+              alt="Logo"
+              width={100}
+              height={100}
+              style={{
+                margin: "0 auto",
+                marginBottom: "1rem",
+                border: "none",
+                boxShadow: "none",
+                outline: "none",
+              }}
+            />
 
-    <h2 className="text-xl font-bold border-none" style={{ color: "#0142d0" }}>
-      Simulación Full Móvil
-    </h2>
-    <p className="text-black font-semibold border-none mt-4">
-      Modelo: {selectedModel}
-    </p>
-    <p className="text-black font-semibold border-none mt-1">
-      Almacenamiento: {almacenamiento}
-    </p>
-    <p className="text-black font-semibold border-none mt-1">
-      Fallas: {fallas.length > 0 ? fallas.join(", ") : "Ninguna"}
-    </p>
-    <p className="text-black font-bold border-none mt-4 text-lg">
-      Valor estimado: ${finalPrice.toLocaleString("es-CO")} COP
-    </p>
-  </div>
-</div>
-
+            <h2
+              className="text-xl font-bold border-none"
+              style={{ color: "#0142d0" }}
+            >
+              Simulación Full Móvil
+            </h2>
+            <p className="text-black font-semibold border-none mt-4">
+              Modelo: {selectedModel}
+            </p>
+            <p className="text-black font-semibold border-none mt-1">
+              Almacenamiento: {almacenamiento}
+            </p>
+            <p className="text-black font-semibold border-none mt-1">
+              Fallas: {fallas.length > 0 ? fallas.join(", ") : "Ninguna"}
+            </p>
+            <p className="text-black font-bold border-none mt-4 text-lg">
+              Valor estimado: ${finalPrice.toLocaleString("es-CO")} COP
+            </p>
+          </div>
+        </div>
       </main>
 
-      {/* Footer siempre al fondo */}
       <footer className="mt-auto px-4">
         <div className="mx-auto text-center py-6 px-6 rounded-2xl backdrop-blur-2xl bg-transparent border border-transparent shadow-xl flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4">
           <p className="text-sm text-black drop-shadow">

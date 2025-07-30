@@ -1,4 +1,3 @@
-// src/types/types.ts
 
 export interface PhoneModel {
   name: string;
