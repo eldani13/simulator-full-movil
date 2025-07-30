@@ -62,9 +62,9 @@ export default function Home() {
                 <Image
                   src="/images/logo.png"
                   alt="Logo Full Móvil"
-                  width={250}
-                  height={250}
-                  // className="w-full h-auto drop-shadow-md"
+                  width={200}
+                  height={200}
+                  className="w-full h-auto drop-shadow-md"
                 />
               </div>
             </div>
