@@ -98,7 +98,7 @@ export default function SimulatorForm({
         <div className="flex items-center gap-2 mb-1">
           <h2 className="text-2xl font-bold text-[#0142d0]">Simulador</h2>
           <Image
-            src="/images/logo.png"
+            src="/logo.png"
             alt="Logo Full Móvil"
             width={100}
             height={40}

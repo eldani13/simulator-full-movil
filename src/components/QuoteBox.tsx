@@ -81,7 +81,7 @@ export default function QuoteBox({
 
       <div className="flex justify-center">
         <Image
-          src="/images/logo.png"
+          src="/logo.png"
           alt="Logo Full Móvil"
           width={100}
           height={100}

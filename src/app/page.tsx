@@ -60,7 +60,7 @@ export default function Home() {
               </h1>
               <div>
                 <Image
-                  src="/public/images/logo.png"
+                  src="/logo.png"
                   alt="Logo Full Móvil"
                   width={200}
                   height={200}
@@ -147,7 +147,7 @@ export default function Home() {
 
           <div className="relative z-10 text-center">
             <Image
-              src="/images/logo.png"
+              src="logo.png"
               alt="Logo"
               width={100}
               height={100}
@@ -191,7 +191,7 @@ export default function Home() {
             Todos los derechos reservados.
           </p>
           <Image
-            src="/images/logo.png"
+            src="/logo.png"
             alt="Logo Full Móvil"
             width={100}
             height={100}
