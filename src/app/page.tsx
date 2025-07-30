@@ -60,7 +60,7 @@ export default function Home() {
               </h1>
               <div>
                 <Image
-                  src="/images/logo.png"
+                  src="/public/images/logo.png"
                   alt="Logo Full Móvil"
                   width={200}
                   height={200}
